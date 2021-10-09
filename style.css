@@ -160,10 +160,49 @@ button:hover,
   padding: 0 40px;
 }
 
-#statistics {
+#links {
+  background-color: #eff1f7;
   margin-top: -90px;
-  bottom: 0;
   padding-top: 190px;
+}
+
+#links * {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 35px;
+}
+
+#links .link {
+  display: flex;
+  gap: 25px;
+  background-color: #ffffff;
+  margin: 10px 0;
+  padding: 10px 15px;
+}
+
+#links .link p:first-child {
+  flex-grow: 1;
+  color: #34313d;
+}
+
+#links .link .short {
+  color: #2bd0d0;
+}
+
+#links button {
+  font-size: 15px;
+  padding: 0;
+  width: 100px;
+  border-radius: 8px;
+}
+
+#links button.copied {
+  background-color: #3a3054;
+}
+
+#statistics {
+  bottom: 0;
   text-align: center;
   background-color: #eff1f7;
 }

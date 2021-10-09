@@ -11,57 +11,49 @@
   </head>
 
   <body>
-    <header>
-      <nav id="menu" class="plr">
-        <img src="images/logo.svg" alt="Shortly" />
-        <a href="#" id="menu--features">Features</a>
-        <a href="#" id="menu--pricing">Pricing</a>
-        <a href="#" id="menu--resources">Resources</a>
-        <a href="#" id="menu--login">Login</a>
-        <button><a href="#" id="menu--signup">Sign Up</a></button>
-      </nav>
-      <section id="intro" class="pl ptb">
-        <div>
-          <h1>More than just shorter links</h1>
-          <p>Build your brand’s recognition and get detailed insights on how your links are performing.</p>
-          <button class="button">Get Started</a>
-        </div>
-        <img src="images/illustration-working.svg" alt="Working" />
-      </section>
+    <div id="main-wrapper">
+      <header class="wrapper">
+        <nav id="menu">
+          <img src="images/logo.svg" alt="Shortly" />
+          <a href="#" id="menu--features">Features</a>
+          <a href="#" id="menu--pricing">Pricing</a>
+          <a href="#" id="menu--resources">Resources</a>
+          <a href="#" id="menu--login">Login</a>
+          <button><a href="#" id="menu--signup">Sign Up</a></button>
+        </nav>
+        <section id="intro" class="margin">
+          <div id="intro-img"><img src="images/illustration-working.svg" alt="Working" /></div>
+          <div id="intro-text">
+            <h1>More than just shorter links</h1>
+            <p class="text-3">Build your brand’s recognition and get detailed insights on how your links are performing.</p>
+            <button class="button text-2">Get Started</a>
+          </div>
+        </section>
     </header>
 
-    <div id="form-area" class="plr">
+    <div id="form-area" class="wrapper">
       <div id="form">
         <div id="input">
-          <input type="text" id="url" name="url" placeholder="Shorten a link here..." />
+          <input type="text" id="url" name="url" class="text-2"placeholder="Shorten a link here..." />
           <label for="url"></label>
         </div>
-        <button type="submit">Shorten It!</button>
+        <button type="submit" class="text-2">Shorten It!</button>
       </div>
     </div>
 
-    <div id="links" class="plr ptb">
-      <div class="link">
-        <p>https://www.google.com</p>
-        <p class="short">https://rel.ink/dedec2</p>
-        <button type="button" class="copied">Copied!</button>
+    <div id="links-statistics-wrapper" class="wrapper">
+      <div id="links">
+        <div class="link">
+          <p class="text-2">https://www.google.com</p>
+          <hr />
+          <p class="short text-2">https://rel.ink/dedec2</p>
+          <button type="button" class="copied text-1">Copied!</button>
+        </div>
       </div>
-      <div class="link">
-        <p>https://www.google.com</p>
-        <p class="short">https://rel.ink/dedec2</p>
-        <button type="button">Copy</button>
-      </div>
-      <div class="link">
-        <p>https://www.google.com</p>
-        <p class="short">https://rel.ink/dedec2</p>
-        <button type="button">Copy</button>
-      </div>
-    </div>
-
-    <article id="statistics" class="plr ptb">
+      <article id="statistics" class="plr ptb">
       <header>
         <h2>Advanced Statistics</h2>
-        <p id="satistics-subheader">
+        <p id="satistics-subheader" class="text-1">
           Track how your links are performing across the web with our advanced statistics dashboard.
         </p>
       </header>
@@ -93,38 +85,45 @@
         <hr />
       </div>
     </article>
-    <div id="cta">
-      <p>Boost your links today</p>
-      <button type="button">Get Started</button>
     </div>
 
-    <footer class="ptb plr">
-      <div><img src="images/logo.svg" alt="Shortly" class="logo" /></div>
-      <div>
-        <p>Features</p>
-        <a href="#">Link Shortening</a>
-        <a href="#">Branded Links</a>
-        <a href="#">Analytics</a>
-      </div>
-      <div>
-        <p>Resources</p>
-        <a href="#">Blog</a>
-        <a href="#">Developers</a>
-        <a href="#">Support</a>
-      </div>
-      <div>
-        <p>Company</p>
-        <a href="#">About</a>
-        <a href="#">Our team</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact</a>
-      </div>
-      <div>
-        <img src="images/icon-facebook.svg" alt="Facebook" />
-        <img src="images/icon-twitter.svg" alt="Twitter" />
-        <img src="images/icon-pinterest.svg" alt="Pinterest" />
-        <img src="images/icon-instagram.svg" alt="Instagram" />
-      </div>
-    </footer>
+    
+    <div id="cta">
+      <h2>Boost your links today</h2>
+      <button type="button" class="text-2">Get Started</button>
+    </div>
+
+    <div id="footer-wrapper" class="wrapper">
+      <footer>
+        <div><img src="images/logo.svg" alt="Shortly" class="logo" /></div>
+        <div>
+          <p class="text-1">Features</p>
+          <a href="#">Link Shortening</a>
+          <a href="#">Branded Links</a>
+          <a href="#">Analytics</a>
+        </div>
+        <div>
+          <p class="text-1">Resources</p>
+          <a href="#">Blog</a>
+          <a href="#">Developers</a>
+          <a href="#">Support</a>
+        </div>
+        <div>
+          <p class="text-1">Company</p>
+          <a href="#">About</a>
+          <a href="#">Our team</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <img src="images/icon-facebook.svg" alt="Facebook" />
+          <img src="images/icon-twitter.svg" alt="Twitter" />
+          <img src="images/icon-pinterest.svg" alt="Pinterest" />
+          <img src="images/icon-instagram.svg" alt="Instagram" />
+        </div>
+      </footer>
+    </div>
+    </div>
+    
   </body>
 </html>

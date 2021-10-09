@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+:root {
+  font-size: 15px;
+}
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   padding-top: 30px;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
   font-weight: 400;
   color: #9e9aa8;
 }
@@ -19,6 +24,29 @@ h2,
 h3 {
   color: #34313d;
   font-weight: 600;
+  line-height: 105%;
+}
+
+h1 {
+  font-size: 5.33rem;
+}
+h2 {
+  font-size: 2.66rem;
+}
+h3 {
+  font-size: 1.46rem;
+}
+
+.text-1 {
+  font-size: 1.2rem;
+}
+
+.text-2 {
+  font-size: 1.4rem;
+}
+
+.text-3 {
+  font-size: 1.6rem;
 }
 
 button {
@@ -28,7 +56,6 @@ button {
   border-radius: 40px;
   font-weight: 600;
   border: none;
-  font-size: 20px;
 }
 
 button:hover,
@@ -37,9 +64,19 @@ button:hover,
   cursor: pointer;
 }
 
-.plr {
-  padding-left: 15%;
-  padding-right: 15%;
+#main-wrapper {
+  overflow-x: hidden;
+}
+
+.wrapper > * {
+  width: min(95vw, 2000px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .pl {
@@ -54,8 +91,7 @@ button:hover,
 #menu {
   display: flex;
   align-items: center;
-  gap: 20px;
-  font-size: 15px;
+  gap: 60px;
   font-weight: 600;
 }
 
@@ -64,7 +100,6 @@ button:hover,
 }
 
 #menu button {
-  font-size: 15px;
   padding: 12px 40px;
 }
 
@@ -72,24 +107,26 @@ button:hover,
   display: flex;
 }
 
-#intro div {
-  flex-grow: 1;
+#intro-text {
+  flex-basis: 55%;
+  order: 1;
 }
 
-#intro img {
+#intro-img {
+  flex-basis: 40%;
+  order: 2;
+}
+
+#intro-img img {
   position: relative;
-  right: -5%;
-  max-width: 50%;
+  right: -50%;
 }
 
 #intro p {
-  font-size: 22px;
   margin-bottom: 50px;
 }
 
 #intro h1 {
-  font-size: 80px;
-  line-height: 90px;
   margin-bottom: 0px;
 }
 
@@ -117,7 +154,6 @@ button:hover,
 #form button,
 #form #input input {
   border-radius: 8px;
-  font-size: 20px;
   border: none;
 }
 
@@ -160,7 +196,7 @@ button:hover,
   padding: 0 40px;
 }
 
-#links {
+#links-statistics-wrapper {
   background-color: #eff1f7;
   margin-top: -90px;
   padding-top: 190px;
@@ -169,7 +205,6 @@ button:hover,
 #links * {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 15px;
   line-height: 35px;
 }
 
@@ -177,8 +212,12 @@ button:hover,
   display: flex;
   gap: 25px;
   background-color: #ffffff;
-  margin: 10px 0;
+  margin-bottom: 20px;
   padding: 10px 15px;
+}
+
+.link hr {
+  display: none;
 }
 
 #links .link p:first-child {
@@ -191,7 +230,6 @@ button:hover,
 }
 
 #links button {
-  font-size: 15px;
   padding: 0;
   width: 100px;
   border-radius: 8px;
@@ -208,8 +246,7 @@ button:hover,
 }
 
 #satistics-subheader {
-  font-size: 18px;
-  width: 500px;
+  width: min(500px, 90%);
   margin: auto;
 }
 
@@ -275,18 +312,22 @@ button:hover,
   text-align: center;
 }
 
-#cta p {
+#cta h2 {
   margin-top: 0;
-  font-size: 48px;
   font-weight: 600;
   color: #ffffff;
+}
+
+#footer-wrapper {
+  background-color: #232127;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 footer {
   display: flex;
   gap: 80px;
   justify-content: space-between;
-  background-color: #232127;
   color: #ffffff;
 }
 
@@ -300,13 +341,11 @@ footer .logo {
 }
 
 footer p {
-  font-size: 16px;
   font-weight: 600;
 }
 
 footer a {
   display: block;
-  font-size: 15px;
   line-height: 35px;
   font-weight: 400;
   color: #bfbfbf;
@@ -323,4 +362,101 @@ footer div:last-child img {
 footer div:last-child img:hover {
   filter: brightness(0) saturate(100%) invert(83%) sepia(76%) saturate(2505%) hue-rotate(130deg) brightness(84%)
     contrast(92%);
+}
+
+@media (max-width: 1100px) {
+  #menu {
+    display: none;
+  }
+  h1 {
+    font-size: 2.8rem;
+  }
+  h2 {
+    font-size: 1.86rem;
+  }
+  .text-1 {
+    font-size: 1.1rem;
+  }
+
+  .text-2 {
+    font-size: 1.25rem;
+  }
+
+  .text-3 {
+    font-size: 1.4rem;
+  }
+
+  #intro,
+  .link,
+  #form,
+  #facts,
+  footer {
+    flex-wrap: wrap;
+  }
+
+  #intro-text {
+    flex-basis: 100%;
+    text-align: center;
+    order: 2;
+  }
+
+  .link * {
+    flex-basis: 100%;
+  }
+
+  .link hr {
+    display: block;
+    border: 0.5px solid #9e9aa8;
+  }
+
+  .link button {
+    height: 50px;
+  }
+
+  #intro-img {
+    flex-basis: 100%;
+    order: 1;
+  }
+  #intro-img img {
+    position: static;
+    width: 120%;
+  }
+
+  #form {
+    gap: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #form #input {
+    padding-left: 0;
+  }
+
+  #form button {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  #facts {
+    gap: 0;
+  }
+
+  #facts section p,
+  h3 {
+    text-align: center;
+  }
+
+  #facts hr {
+    display: none;
+  }
+  #facts section .icon {
+    margin: auto;
+  }
+
+  footer {
+    gap: 10px;
+  }
+  footer > * {
+    text-align: center;
+    flex-basis: 100%;
+  }
 }

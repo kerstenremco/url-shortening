@@ -2,52 +2,16 @@ let url = document.getElementById("url");
 let submit = document.getElementById("submit");
 let urlLabel = document.getElementById("urlLabel");
 let links = document.getElementById("links");
+
+let apiUrl = "https://api.shrtco.de/v2/shorten?url=";
+let errorMessageInvalidUrl = "Geef een geldig url op";
+let unknownErrorText = " Er heeft zich een onbekende fout voorgedaan";
+let nameLocalStorageobject = "urls";
+
 submit.addEventListener("click", shortenUrl);
 links.addEventListener("click", copyLink);
+
 renderList();
-
-function shortenUrl() {
-  let errorMessageInvalidUrl = "Geef een geldig url op";
-  // Controleer of URL is ingevuld, als niet -> toon foutmelding en stop
-  if (!checkUrl()) return showError(true, errorMessageInvalidUrl);
-  // Maak API request
-  apiRequest()
-    .then((data) => {
-      addToList(data.originalUrl, data.shortUrl);
-      renderListItem(data.originalUrl, data.shortUrl);
-      showError(false);
-      url.value = "";
-    })
-    .catch((err) => {
-      console.error(err);
-      showError(true);
-    });
-}
-
-function addToList(originalUrl, shortUrl) {
-  let ls = getListFromLocalStorage();
-  ls.push([originalUrl, shortUrl]);
-  localStorage.setItem("urls", JSON.stringify(ls));
-}
-
-function getListFromLocalStorage() {
-  return localStorage.getItem("urls")
-    ? JSON.parse(localStorage.getItem("urls"))
-    : [];
-}
-function copyLink(e) {
-  if (!e.target.type === "button") return;
-  let short = e.target.parentElement.querySelector(".short").innerText;
-  navigator.clipboard.writeText(short).then((_res) => {
-    links.querySelectorAll("button").forEach((btn) => {
-      btn.classList.remove("copied");
-      btn.innerText = "Copy";
-    });
-    let btn = e.target.parentElement.querySelector("button");
-    btn.innerText = "Copied";
-    btn.classList.add("copied");
-  });
-}
 
 function renderList() {
   let ls = getListFromLocalStorage();
@@ -70,7 +34,7 @@ function renderListItem(originalUrl, shortUrl) {
   let btn = document.createElement("button");
   btn.type = "button";
   btn.classList.add("text-1");
-  btn.appendChild(document.createTextNode("Copy"));
+  btn.appendChild(document.createTextNode("Kopieer"));
   div.appendChild(origin);
   div.appendChild(hr);
   div.appendChild(short);
@@ -78,16 +42,46 @@ function renderListItem(originalUrl, shortUrl) {
   links.prepend(div);
 }
 
-function showError(show, message) {
-  let unknownErrorText = " Er heeft zich een onbekende fout voorgedaan";
-  let className = "error";
-  if (!show) {
-    url.classList.remove(className);
-    urlLabel.innerText = null;
-    return;
-  }
-  url.classList.add(className);
-  urlLabel.innerText = message || unknownErrorText;
+function addToList(originalUrl, shortUrl) {
+  let ls = getListFromLocalStorage();
+  ls.push([originalUrl, shortUrl]);
+  localStorage.setItem(nameLocalStorageobject, JSON.stringify(ls));
+}
+
+function getListFromLocalStorage() {
+  return localStorage.getItem(nameLocalStorageobject)
+    ? JSON.parse(localStorage.getItem(nameLocalStorageobject))
+    : [];
+}
+function copyLink(e) {
+  if (!e.target.type === "button") return;
+  let short = e.target.parentElement.querySelector(".short").innerText;
+  navigator.clipboard.writeText(short).then((_res) => {
+    links.querySelectorAll("button").forEach((btn) => {
+      btn.classList.remove("copied");
+      btn.innerText = "Kopieer";
+    });
+    let btn = e.target.parentElement.querySelector("button");
+    btn.innerText = "Gekopieerd";
+    btn.classList.add("copied");
+  });
+}
+
+function shortenUrl() {
+  // Controleer of URL is ingevuld, als niet -> toon foutmelding en stop
+  if (!checkUrl()) return showError(true, errorMessageInvalidUrl);
+  // Maak API request
+  apiRequest()
+    .then((data) => {
+      addToList(data.originalUrl, data.shortUrl);
+      renderListItem(data.originalUrl, data.shortUrl);
+      showError(false);
+      url.value = "";
+    })
+    .catch((err) => {
+      console.error(err);
+      showError(true);
+    });
 }
 
 function checkUrl() {
@@ -96,7 +90,6 @@ function checkUrl() {
 }
 
 function apiRequest() {
-  let apiUrl = "https://api.shrtco.de/v2/shorten?url=";
   return fetch(`${apiUrl}${url.value}`)
     .then((response) => response.json())
     .then((data) => {
@@ -106,4 +99,15 @@ function apiRequest() {
         shortUrl: data.result.short_link,
       };
     });
+}
+
+function showError(show, message) {
+  let className = "error";
+  if (!show) {
+    url.classList.remove(className);
+    urlLabel.innerText = null;
+    return;
+  }
+  url.classList.add(className);
+  urlLabel.innerText = message || unknownErrorText;
 }

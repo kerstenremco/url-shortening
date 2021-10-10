@@ -1,93 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-  <body>
-    <div id="main-wrapper">
-      <header class="wrapper">
-        <nav id="menu">
-          <img src="images/logo.svg" alt="Shortly" />
-          <a href="#" id="menu--features">Features</a>
-          <a href="#" id="menu--pricing">Pricing</a>
-          <a href="#" id="menu--resources">Resources</a>
-          <a href="#" id="menu--login">Login</a>
-          <button><a href="#" id="menu--signup">Sign Up</a></button>
-        </nav>
-        <section id="intro" class="margin">
-          <div id="intro-img"><img src="images/illustration-working.svg" alt="Working" /></div>
-          <div id="intro-text">
-            <h1>More than just shorter links</h1>
-            <p class="text-3">Build your brand’s recognition and get detailed insights on how your links are performing.</p>
-            <button class="button text-2">Get Started</a>
-          </div>
-        </section>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+</head>
+
+<body>
+  <div id="main-wrapper">
+    <header class="wrapper">
+      <nav id="menu">
+        <img src="images/logo.svg" alt="Shortly" />
+        <a href="#" id="menu--features">Features</a>
+        <a href="#" id="menu--pricing">Pricing</a>
+        <a href="#" id="menu--resources">Resources</a>
+        <a href="#" id="menu--login">Login</a>
+        <button><a href="#" id="menu--signup">Sign Up</a></button>
+      </nav>
+      <section id="intro" class="margin">
+        <div id="intro-img"><img src="images/illustration-working.svg" alt="Working" /></div>
+        <div id="intro-text">
+          <h1>More than just shorter links</h1>
+          <p class="text-3">Build your brand’s recognition and get detailed insights on how your links are performing.
+          </p>
+          <button class="button text-2">Get Started</a>
+        </div>
+      </section>
     </header>
 
     <div id="form-area" class="wrapper">
       <div id="form">
         <div id="input">
-          <input type="text" id="url" name="url" class="text-2"placeholder="Shorten a link here..." />
-          <label for="url"></label>
+          <input type="text" id="url" name="url" class="text-2" placeholder="Shorten a link here..." />
+          <label for="url" id="urlLabel"></label>
         </div>
-        <button type="submit" class="text-2">Shorten It!</button>
+        <button type="button" class="text-2" id="submit">Shorten It!</button>
       </div>
     </div>
 
     <div id="links-statistics-wrapper" class="wrapper">
       <div id="links">
-        <div class="link">
-          <p class="text-2">https://www.google.com</p>
-          <hr />
-          <p class="short text-2">https://rel.ink/dedec2</p>
-          <button type="button" class="copied text-1">Copied!</button>
-        </div>
       </div>
       <article id="statistics" class="plr ptb">
-      <header>
-        <h2>Advanced Statistics</h2>
-        <p id="satistics-subheader" class="text-1">
-          Track how your links are performing across the web with our advanced statistics dashboard.
-        </p>
-      </header>
-      <div id="facts">
-        <section>
-          <div class="icon"><img src="images/icon-brand-recognition.svg" alt="Working" /></div>
-          <h3>Brand Recognition</h3>
-          <p>
-            Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil
-            confidence in your content.
+        <header>
+          <h2>Advanced Statistics</h2>
+          <p id="satistics-subheader" class="text-1">
+            Track how your links are performing across the web with our advanced statistics dashboard.
           </p>
-        </section>
-        <section>
-          <div class="icon"><img src="images/icon-brand-recognition.svg" alt="Working" /></div>
-          <h3>Detailed Records</h3>
-          <p>
-            Gain insights into who is clicking your links. Knowing when and where people engage with your content helps
-            inform better decisions.
-          </p>
-        </section>
-        <section>
-          <div class="icon"><img src="images/icon-brand-recognition.svg" alt="Working" /></div>
-          <h3>Fully Customizable</h3>
-          <p>
-            Improve brand awareness and content discoverability through customizable links, supercharging audience
-            engagement.
-          </p>
-        </section>
-        <hr />
-      </div>
-    </article>
+        </header>
+        <div id="facts">
+          <section>
+            <div class="icon"><img src="images/icon-brand-recognition.svg" alt="Working" /></div>
+            <h3>Brand Recognition</h3>
+            <p>
+              Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil
+              confidence in your content.
+            </p>
+          </section>
+          <section>
+            <div class="icon"><img src="images/icon-brand-recognition.svg" alt="Working" /></div>
+            <h3>Detailed Records</h3>
+            <p>
+              Gain insights into who is clicking your links. Knowing when and where people engage with your content
+              helps
+              inform better decisions.
+            </p>
+          </section>
+          <section>
+            <div class="icon"><img src="images/icon-brand-recognition.svg" alt="Working" /></div>
+            <h3>Fully Customizable</h3>
+            <p>
+              Improve brand awareness and content discoverability through customizable links, supercharging audience
+              engagement.
+            </p>
+          </section>
+          <hr />
+        </div>
+      </article>
     </div>
 
-    
+
     <div id="cta">
       <h2>Boost your links today</h2>
       <button type="button" class="text-2">Get Started</button>
@@ -123,7 +121,8 @@
         </div>
       </footer>
     </div>
-    </div>
-    
-  </body>
+  </div>
+
+</body>
+
 </html>

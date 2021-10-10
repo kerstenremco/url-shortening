@@ -360,8 +360,8 @@ footer div:last-child img {
 }
 
 footer div:last-child img:hover {
-  filter: brightness(0) saturate(100%) invert(83%) sepia(76%) saturate(2505%) hue-rotate(130deg) brightness(84%)
-    contrast(92%);
+  filter: brightness(0) saturate(100%) invert(83%) sepia(76%) saturate(2505%)
+    hue-rotate(130deg) brightness(84%) contrast(92%);
 }
 
 @media (max-width: 1100px) {
